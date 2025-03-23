@@ -6,11 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome file</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('Service Worker Registered'))
+        .catch(err => console.log('Service Worker Registration Failed', err));
+    }
+  </script>
+
   <style>
     .task-list {
       list-style: none;
       padding-left: 0;
     }
+
     .task-list-item {
       display: flex;
       align-items: center;
@@ -21,6 +32,7 @@
       background-color: lightgray;
 
     }
+
     .task-list-item.checked {
       background-color: orangered;
       color: white;
@@ -32,29 +44,34 @@
 <body class="stackedit">
   <div class="stackedit__html">
     <h2><strong>📌 Step-by-Step Roadmap</strong></h2>
-    
+
     <h3><strong>🔹 Phase 1: Fundamentals & Refreshers (4-6 weeks)</strong></h3>
     <ul class="task-list">
-      <li class="task-list-item"><input type="checkbox" id="ts1"> TypeScript - Basic Types, Interfaces, Enums, Generics</li>
+      <li class="task-list-item"><input type="checkbox" id="ts1"> TypeScript - Basic Types, Interfaces, Enums, Generics
+      </li>
       <li class="task-list-item"><input type="checkbox" id="ts2"> TypeScript - Type Inference & Type Narrowing</li>
-      <li class="task-list-item"><input type="checkbox" id="ts3"> TypeScript - OOP (Classes, Inheritance, Interfaces)</li>
-      <li class="task-list-item"><input type="checkbox" id="ts4"> TypeScript - Using with Vue/Nuxt (defineProps, defineEmits)</li>
+      <li class="task-list-item"><input type="checkbox" id="ts3"> TypeScript - OOP (Classes, Inheritance, Interfaces)
+      </li>
+      <li class="task-list-item"><input type="checkbox" id="ts4"> TypeScript - Using with Vue/Nuxt (defineProps,
+        defineEmits)</li>
       <li class="task-list-item"><input type="checkbox" id="php1"> PHP - Syntax, Arrays, Functions, OOP</li>
       <li class="task-list-item"><input type="checkbox" id="php2"> PHP - Error Handling & Best Practices</li>
       <li class="task-list-item"><input type="checkbox" id="php3"> PHP - Composer & Autoloading</li>
     </ul>
-    
+
     <h3><strong>🔹 Phase 2: Backend Mastery (Laravel + MySQL) (4-6 weeks)</strong></h3>
     <ul class="task-list">
       <li class="task-list-item"><input type="checkbox" id="laravel1"> Laravel - Installation & MVC Architecture</li>
-      <li class="task-list-item"><input type="checkbox" id="laravel2"> Laravel - Blade Templating & Component System</li>
+      <li class="task-list-item"><input type="checkbox" id="laravel2"> Laravel - Blade Templating & Component System
+      </li>
       <li class="task-list-item"><input type="checkbox" id="laravel3"> Laravel - Routing, Middleware, and Requests</li>
-      <li class="task-list-item"><input type="checkbox" id="laravel4"> Laravel - Authentication & Authorization (Sanctum, Passport)</li>
+      <li class="task-list-item"><input type="checkbox" id="laravel4"> Laravel - Authentication & Authorization
+        (Sanctum, Passport)</li>
       <li class="task-list-item"><input type="checkbox" id="laravel5"> Laravel - Eloquent ORM & Relationships</li>
       <li class="task-list-item"><input type="checkbox" id="laravel6"> Laravel - REST API Development</li>
       <li class="task-list-item"><input type="checkbox" id="laravel7"> MySQL - Database Normalization & Indexing</li>
     </ul>
-    
+
     <h3><strong>🔹 Phase 3: Frontend Mastery (Nuxt.js + Vuetify + Pinia) (4-6 weeks)</strong></h3>
     <ul class="task-list">
       <li class="task-list-item"><input type="checkbox" id="nuxt1"> Nuxt.js - Project Setup & File Structure</li>
@@ -63,17 +80,21 @@
       <li class="task-list-item"><input type="checkbox" id="pinia1"> Pinia - Setup & Basic Store Structure</li>
       <li class="task-list-item"><input type="checkbox" id="pinia2"> Pinia - Using Getters, Actions, and State</li>
       <li class="task-list-item"><input type="checkbox" id="vuetify1"> Vuetify - Theming & Global Styles</li>
-      <li class="task-list-item"><input type="checkbox" id="vuetify2"> Vuetify - Components (Data Tables, Dialogs, Forms)</li>
+      <li class="task-list-item"><input type="checkbox" id="vuetify2"> Vuetify - Components (Data Tables, Dialogs,
+        Forms)</li>
     </ul>
-    
+
     <h3><strong>🔹 Phase 4: Full-Stack Development & Deployment (4-6 weeks)</strong></h3>
     <ul class="task-list">
-      <li class="task-list-item"><input type="checkbox" id="fullstack1"> Build a Full-Stack App (Laravel API + Nuxt.js + Pinia + Vuetify)</li>
-      <li class="task-list-item"><input type="checkbox" id="devops1"> DevOps - Version Control (Git + GitHub/GitLab)</li>
-      <li class="task-list-item"><input type="checkbox" id="devops2"> DevOps - CI/CD Basics (GitHub Actions/GitLab CI)</li>
+      <li class="task-list-item"><input type="checkbox" id="fullstack1"> Build a Full-Stack App (Laravel API + Nuxt.js +
+        Pinia + Vuetify)</li>
+      <li class="task-list-item"><input type="checkbox" id="devops1"> DevOps - Version Control (Git + GitHub/GitLab)
+      </li>
+      <li class="task-list-item"><input type="checkbox" id="devops2"> DevOps - CI/CD Basics (GitHub Actions/GitLab CI)
+      </li>
       <li class="task-list-item"><input type="checkbox" id="devops3"> DevOps - Docker + Laravel + MySQL</li>
     </ul>
-    
+
     <h3><strong>🔹 Phase 5: Advanced Topics (Ongoing Learning)</strong></h3>
     <ul class="task-list">
       <li class="task-list-item"><input type="checkbox" id="adv1"> GraphQL (Laravel Lighthouse + Apollo Client)</li>
